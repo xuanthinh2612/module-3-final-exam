@@ -35,10 +35,11 @@ public class ProductServlet extends HttpServlet {
                 break;
             case "updateProduct":
                 showUpdateProduct(request, response);
+                break;
             case "deleteProduct":
                 deleteProduct(request, response);
                 break;
-            case "findByName":
+            case "searchByName":
                 showFindByName(request, response);
                 break;
         }
