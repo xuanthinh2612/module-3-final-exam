@@ -122,7 +122,7 @@ public class ProductService implements IProductService {
             ps.setString(5, product.getDescription());
             ps.setInt(6, product.getId_category());
             ps.setInt(7, product.getId());
-            ps.execute();
+            ps.executeUpdate();
 
         } catch (SQLException throwables) {
             throwables.printStackTrace();
@@ -139,6 +139,7 @@ public class ProductService implements IProductService {
         try {
             PreparedStatement preparedStatement = connection.prepareStatement("delete  from product where id=?");
             preparedStatement.setInt(1, id);
+            preparedStatement.execute();
         } catch (SQLException throwables) {
             throwables.printStackTrace();
             return false;

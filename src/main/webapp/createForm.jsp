@@ -11,32 +11,28 @@
 
     <table>
         <tr>
-            <td>ID</td>
-            <td><input disabled name="id" type="text" value="${product.getId()} "></td>
-        </tr>
-        <tr>
             <td>Product Name</td>
-            <td><input name="name" type="text" value="${product.getName()}"></td>
+            <td><input name="name" type="text" ></td>
         </tr>
         <tr>
             <td>Price</td>
-            <td><input name="price" type="text" value="${product.getPrice()}"></td>
+            <td><input name="price" type="text" ></td>
         </tr>
         <tr>
             <td>Number</td>
-            <td><input name="number" type="text" value="${product.getNumber()}"></td>
+            <td><input name="number" type="text" ></td>
         </tr>
         <tr>
             <td>Color</td>
-            <td><input name="color" type="text" value="${product.getColor()}"></td>
+            <td><input name="color" type="text" ></td>
         </tr>
         <tr>
             <td>Description</td>
-            <td><input name="description" type="text" value="${product.getDescription()}"></td>
+            <td><input name="description" type="text" ></td>
         </tr>
         <tr>
             <td>Category</td>
-            <td><input name= "id_category" type="text" value="${product.getId_category()}"></td>
+            <td><input name= "id_category" type="text" ></td>
         </tr>
 
 
@@ -44,7 +40,7 @@
 
 
     </table>
-    <button type="submit">Update</button>
+    <button type="submit">Create</button>
 
 </form>
 

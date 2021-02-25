@@ -7,10 +7,11 @@
 </head>
 <body>
 <form method="get">
-    <input type="search" name="name">
+    <input type="text" name="name">
     <input type="text" value="searchByName" name="action"  hidden>
     <input type="submit" value="Search">
 </form>
+<a href="product?action=createProduct">Create New</a>
 <table>
     <tr>
         <td>ID</td>
@@ -33,7 +34,7 @@
             <td>${product.getDescription()}</td>
 <%--            <td> <span onload="checkCategory()"> </span>--%>
             <td>${product.getId_category()}</td>
-            <td><a href="product?action=updateProduct" type="button">Update</a>|<a href="product?action=deleteProduct" type="button">Delete</a>  </td>
+            <td><a href="product?action=updateProduct&&id=${product.getId()}" type="button">Update</a>|<a href="product?action=deleteProduct&&id=${product.getId()}" type="button">Delete</a>  </td>
         </tr>
 
     </c:forEach>
