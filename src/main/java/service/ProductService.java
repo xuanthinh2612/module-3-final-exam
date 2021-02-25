@@ -84,21 +84,23 @@ public class ProductService implements IProductService {
     }
 
     @Override
-    public Product findByName(String name) {
-        Product product = null;
+    public List<Product> findByName(String searchWord) {
+        List<Product> productList = new ArrayList<>();
+
         try {
-            PreparedStatement preparedStatement = connection.prepareStatement("select *from product where name = ?");
-            preparedStatement.setString(1, name);
+            PreparedStatement preparedStatement = connection.prepareStatement("select *from product where name like ?");
+            preparedStatement.setString(1, "%"+searchWord+"%");
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
                 int id = resultSet.getInt("id");
-//                String name = resultSet.getString("name");
+                String name = resultSet.getString("name");
                 double price = resultSet.getDouble("price");
                 int number = resultSet.getInt("number");
                 String color = resultSet.getString("color");
                 String description = resultSet.getString("description");
                 int id_category = resultSet.getInt("id_category");
-                product = new Product(id, name, price, number, color, description, id_category);
+                Product product = new Product(id, name, price, number, color, description, id_category);
+                productList.add(product);
 
             }
 
@@ -106,7 +108,7 @@ public class ProductService implements IProductService {
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
-        return product;
+        return productList;
 
     }
 

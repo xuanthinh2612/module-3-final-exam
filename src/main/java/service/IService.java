@@ -10,7 +10,7 @@ public interface IService <T> {
 
     T findById(int id);
 
-    T findByName(String name);
+    List<T> findByName(String name);
 
     boolean update(T t);
 

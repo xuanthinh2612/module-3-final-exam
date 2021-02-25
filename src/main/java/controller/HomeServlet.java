@@ -37,11 +37,8 @@ public class HomeServlet extends HttpServlet {
 
     private void findResult(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String name = request.getParameter("name");
-        Product product = productService.findByName(name);
-        List<Product> productList = new ArrayList<>();
-        productList.add(product);
+        List<Product> productList = productService.findByName(name);
         request.setAttribute("productList", productList);
-        request.setAttribute("productCategory", productCategory);
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("showAll.jsp");
         requestDispatcher.forward(request, response);
 
